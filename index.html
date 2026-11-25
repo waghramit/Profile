@@ -13,20 +13,25 @@
             --border-color: #E2E8F0;
         }
 
+        @page {
+            size: A4;
+            margin: 12mm 14mm;
+        }
+
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             color: var(--text-dark);
             background-color: #f0f4f8;
             margin: 0;
             padding: 20px;
-            line-height: 1.6;
+            line-height: 1.55;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
             background: #ffffff;
-            padding: 40px;
+            padding: 36px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
@@ -34,22 +39,22 @@
         /* Header */
         .header {
             border-bottom: 3px solid var(--primary);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            padding-bottom: 16px;
+            margin-bottom: 22px;
         }
 
         .header h1 {
             color: var(--primary);
             margin: 0;
-            font-size: 30px;
+            font-size: 28px;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .header p {
-            margin: 6px 0 0 0;
+            margin: 5px 0 0 0;
             color: var(--secondary);
-            font-size: 14px;
+            font-size: 13.5px;
             font-weight: 600;
             line-height: 1.4;
         }
@@ -57,110 +62,119 @@
         /* Sections */
         .section-title {
             color: var(--primary);
-            font-size: 18px;
+            font-size: 16.5px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
             border-left: 4px solid var(--secondary);
             padding-left: 10px;
-            margin-top: 30px;
-            margin-bottom: 15px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            break-after: avoid;
+            page-break-after: avoid;
         }
 
         .overview-box {
             background-color: var(--bg-light);
-            padding: 20px;
+            padding: 16px 18px;
             border-radius: 6px;
             border: 1px solid var(--border-color);
+            font-size: 14px;
         }
 
         /* Key Metrics / Highlights */
         .metrics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin: 18px 0;
         }
 
         .metric-card {
             background: var(--primary);
             color: white;
-            padding: 20px;
+            padding: 16px 12px;
             border-radius: 6px;
             text-align: center;
         }
 
         .metric-card .number {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: bold;
             color: var(--accent);
+            line-height: 1.15;
         }
 
         .metric-card .label {
-            font-size: 14px;
+            font-size: 13px;
             margin-top: 5px;
+            line-height: 1.25;
         }
 
         /* Lists */
         ul.styled-list {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         ul.styled-list li {
             position: relative;
-            padding-left: 20px;
-            margin-bottom: 12px;
+            padding-left: 18px;
+            margin-bottom: 10px;
+            font-size: 14px;
         }
 
         ul.styled-list li::before {
             content: "■";
             color: var(--secondary);
-            font-size: 10px;
+            font-size: 9px;
             position: absolute;
             left: 0;
-            top: 2px;
+            top: 3px;
         }
 
         /* Leadership Cards */
         .profile-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
         }
 
         .profile-card {
             border: 1px solid var(--border-color);
-            padding: 15px;
+            padding: 14px;
             border-radius: 6px;
             background: #fff;
+            font-size: 13.5px;
         }
 
         .profile-name {
             font-weight: bold;
             color: var(--primary);
-            font-size: 16px;
-            margin-bottom: 8px;
+            font-size: 15px;
+            margin-bottom: 6px;
         }
 
         /* Financial Table */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         th {
             background-color: var(--primary);
             color: white;
             text-align: left;
-            padding: 12px;
-            font-size: 14px;
+            padding: 10px 12px;
+            font-size: 13.5px;
         }
 
         td {
-            padding: 12px;
+            padding: 9px 12px;
             border-bottom: 1px solid var(--border-color);
-            font-size: 14px;
+            font-size: 13.5px;
         }
 
         tr:nth-child(even) {
@@ -172,22 +186,71 @@
         }
 
         .footnote {
-            font-size: 12px;
+            font-size: 11.5px;
             color: #718096;
-            margin-top: 8px;
+            margin-top: 6px;
         }
 
+        /* Print Balancing Rules */
         @media print {
             body {
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 background-color: #ffffff !important;
                 padding: 0 !important;
+                line-height: 1.45;
             }
             .container {
                 box-shadow: none !important;
                 max-width: 100% !important;
-                padding: 20px !important;
+                padding: 0 !important;
+                border-radius: 0;
+            }
+            .header {
+                padding-bottom: 12px;
+                margin-bottom: 16px;
+            }
+            .section-title {
+                margin-top: 18px;
+                margin-bottom: 9px;
+                font-size: 15px;
+            }
+            .overview-box {
+                padding: 12px 15px;
+                font-size: 13px;
+            }
+            .metrics-grid {
+                margin: 14px 0;
+            }
+            .metric-card {
+                padding: 12px 10px;
+            }
+            .metric-card .number {
+                font-size: 24px;
+            }
+            .metric-card .label {
+                font-size: 12px;
+            }
+            ul.styled-list li {
+                margin-bottom: 7px;
+                font-size: 13px;
+            }
+            .profile-card {
+                padding: 11px 13px;
+                font-size: 12.5px;
+            }
+            th, td {
+                padding: 8px 10px;
+                font-size: 12.5px;
+            }
+            .page-break {
+                break-before: page;
+                page-break-before: always;
+                margin-top: 0 !important;
+            }
+            .overview-box, .metrics-grid, .profile-grid, .profile-card, table {
+                break-inside: avoid;
+                page-break-inside: avoid;
             }
         }
     </style>
@@ -195,9 +258,10 @@
 <body>
 
 <div class="container">
+    <!-- PAGE 1 -->
     <div class="header">
         <h1>SYNQUAD GROUP</h1>
-        <p>A Strategic Consortium of Agrani Projects LLP, Kushya Projects &amp; Procurement LLP, Dharmendra Rajput & Satyam Construction.</p>
+        <p>A Strategic Consortium of Agrani Projects LLP, Kushya Projects &amp; Procurement LLP, Dharmendra Rajput &amp; Satyam Construction.</p>
     </div>
 
     <div class="section-title">Company Overview</div>
@@ -220,21 +284,22 @@
         </div>
     </div>
 
-    <div class="section-title">Core Capabilities & Services</div>
+    <div class="section-title">Core Capabilities &amp; Services</div>
     <ul class="styled-list">
-        <li><strong>Water Supply Schemes (JJM & AMRUT 2.0):</strong> Execution of rural and urban water supply networks, including intake wells, sumps, overhead storage tanks (OHTs up to 800 KL capacity), and extensive HDPE/CI/DI pipeline laying.</li>
-        <li><strong>Sewage & Wastewater Treatment (SBM 2.0):</strong> Turnkey design, civil construction, pumping stations, drainage networks, and long-term O&M for STPs (0.5 MLD to 3.0 MLD) under SBM and UADD initiatives.</li>
-        <li><strong>Civil & Commercial Infrastructure:</strong> Development of residential layouts, rigid pavement roads, commercial buildings, and government office facilities.</li>
+        <li><strong>Water Supply Schemes (JJM &amp; AMRUT 2.0):</strong> Execution of rural and urban water supply networks, including intake wells, sumps, overhead storage tanks (OHTs up to 800 KL capacity), and extensive HDPE/CI/DI pipeline laying.</li>
+        <li><strong>Sewage &amp; Wastewater Treatment (SBM 2.0):</strong> Turnkey design, civil construction, pumping stations, drainage networks, and long-term O&amp;M for STPs (0.5 MLD to 3.0 MLD) under SBM and UADD initiatives.</li>
+        <li><strong>Civil &amp; Commercial Infrastructure:</strong> Development of residential layouts, rigid pavement roads, commercial buildings, and government office facilities.</li>
     </ul>
 
-    <div class="section-title">Key Equipment & Plant Infrastructure</div>
+    <div class="section-title">Key Equipment &amp; Plant Infrastructure</div>
     <ul class="styled-list">
         <li><strong>Earthmoving Equipment:</strong> Backhoe Loaders, Tractors, and heavy-duty Road Breakers for trenching and rock breaking.</li>
         <li><strong>Concrete Infrastructure:</strong> Self-loading Ready-Mix Concrete (RMC) for structural pours.</li>
-        <li><strong>Formwork & Shuttering:</strong> 200+ sets of specialized shuttering suited for both round and square sump construction and storage reservoirs.</li>
+        <li><strong>Formwork &amp; Shuttering:</strong> 200+ sets of specialized shuttering suited for both round and square sump construction and storage reservoirs.</li>
     </ul>
 
-    <div class="section-title">Leadership & Key Profiles</div>
+    <!-- PAGE 2 -->
+    <div class="section-title page-break">Leadership &amp; Key Profiles</div>
     <div class="profile-grid">
         <div class="profile-card">
             <div class="profile-name">Dharmendra Rajput</div>
@@ -254,11 +319,11 @@
         </div>
     </div>
 
-    <div class="section-title">Key Track Record & Achievements</div>
+    <div class="section-title">Key Track Record &amp; Achievements</div>
     <ul class="styled-list">
         <li><strong>250+ Village Water Schemes:</strong> Delivered tap water supply systems across remote and complex terrains in Madhya Pradesh under the Jal Jeevan Mission.</li>
-        <li><strong>Urban & STP Infrastructure:</strong> Constructing 3.0 MLD STP facilities in Shamgarh (Mandsaur), plus multi-capacity STPs with O&M contracts for UADD.</li>
-        <li><strong>Government Clients:</strong> Public Health Engineering Department (PHED), Directorate of Urban Administration & Development (UADD), Department of Forest MP.</li>
+        <li><strong>Urban &amp; STP Infrastructure:</strong> Constructing 3.0 MLD STP facilities in Shamgarh (Mandsaur), plus multi-capacity STPs with O&amp;M contracts for UADD.</li>
+        <li><strong>Government Clients:</strong> Public Health Engineering Department (PHED), Directorate of Urban Administration &amp; Development (UADD), Department of Forest MP.</li>
     </ul>
 
     <div class="section-title">Financial Track Record (Combined Performance)</div>
@@ -268,7 +333,7 @@
                 <th>FY</th>
                 <th class="text-right">Kushya Projects LLP (in cr)</th>
                 <th class="text-right">Dharmendra Rajput (in cr)</th>
-                 <th class="text-right">Satyam Construction (in cr)</th>
+                <th class="text-right">Satyam Construction (in cr)</th>
                 <th class="text-right">Total Turnover (in cr)</th>
             </tr>
         </thead>
