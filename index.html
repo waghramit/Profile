@@ -14,8 +14,12 @@
         }
 
         @page {
-            size: A4;
+            size: A4 portrait;
             margin: 8mm 10mm;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
@@ -24,101 +28,107 @@
             background-color: #f0f4f8;
             margin: 0;
             padding: 15px;
-            line-height: 1.4;
+            line-height: 1.35;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
             background: #ffffff;
-            padding: 25px 30px;
+            padding: 22px 26px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        /* Header */
+        /* Top Banner */
         .header {
             border-bottom: 2.5px solid var(--primary);
-            padding-bottom: 8px;
-            margin-bottom: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
+            padding-bottom: 7px;
+            margin-bottom: 10px;
         }
 
         .header h1 {
             color: var(--primary);
             margin: 0;
-            font-size: 24px;
+            font-size: 23px;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .header p {
-            margin: 3px 0 0 0;
+            margin: 2px 0 0 0;
             color: var(--secondary);
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 600;
-            width: 100%;
-        }
-
-        /* Sections */
-        .section-title {
-            color: var(--primary);
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            border-left: 3.5px solid var(--secondary);
-            padding-left: 8px;
-            margin-top: 12px;
-            margin-bottom: 6px;
         }
 
         .overview-box {
             background-color: var(--bg-light);
-            padding: 9px 12px;
+            padding: 8px 12px;
             border-radius: 5px;
             border: 1px solid var(--border-color);
-            font-size: 11.5px;
-            line-height: 1.4;
+            font-size: 11px;
+            margin-bottom: 10px;
         }
 
-        /* Key Metrics / Highlights */
+        /* Key Metrics */
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;
-            margin: 10px 0;
+            margin-bottom: 12px;
         }
 
         .metric-card {
             background: var(--primary);
             color: white;
-            padding: 8px 10px;
+            padding: 7px 10px;
             border-radius: 5px;
             text-align: center;
         }
 
         .metric-card .number {
-            font-size: 20px;
+            font-size: 19px;
             font-weight: bold;
             color: var(--accent);
             line-height: 1.1;
         }
 
         .metric-card .label {
-            font-size: 10.5px;
+            font-size: 10px;
             margin-top: 2px;
         }
 
-        /* Two-Column Middle Section */
-        .two-col-section {
+        /* Two-Part Split Layout */
+        .split-layout {
             display: grid;
-            grid-template-columns: 1.35fr 1fr;
-            gap: 16px;
-            margin-top: 4px;
+            grid-template-columns: 1.55fr 1fr;
+            gap: 18px;
+            align-items: start;
+        }
+
+        .sidebar-box {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 10px 12px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            color: var(--primary);
+            font-size: 12.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            border-left: 3.5px solid var(--secondary);
+            padding-left: 7px;
+            margin-top: 12px;
+            margin-bottom: 6px;
+        }
+
+        .section-title.first {
+            margin-top: 0;
         }
 
         /* Lists */
@@ -130,45 +140,45 @@
 
         ul.styled-list li {
             position: relative;
-            padding-left: 14px;
-            margin-bottom: 5px;
-            font-size: 11.2px;
+            padding-left: 13px;
+            margin-bottom: 5.5px;
+            font-size: 10.8px;
             line-height: 1.35;
         }
 
         ul.styled-list li::before {
             content: "■";
             color: var(--secondary);
-            font-size: 8px;
+            font-size: 7.5px;
             position: absolute;
             left: 0;
             top: 2px;
         }
 
-        /* Leadership Cards */
-        .profile-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
+        /* Leadership Stack (Right Column) */
+        .profile-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
         }
 
         .profile-card {
             border: 1px solid var(--border-color);
-            padding: 8px 10px;
+            padding: 7px 9px;
             border-radius: 5px;
-            background: #fff;
-            font-size: 10.8px;
-            line-height: 1.35;
+            background: #ffffff;
+            font-size: 10.3px;
+            line-height: 1.32;
         }
 
         .profile-name {
             font-weight: bold;
             color: var(--primary);
-            font-size: 12px;
+            font-size: 11.5px;
             margin-bottom: 2px;
         }
 
-        /* Financial Table */
+        /* Financial Table (Left Column) */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -179,14 +189,15 @@
             background-color: var(--primary);
             color: white;
             text-align: left;
-            padding: 5px 8px;
-            font-size: 11px;
+            padding: 5px 6px;
+            font-size: 10px;
+            line-height: 1.2;
         }
 
         td {
-            padding: 4.5px 8px;
+            padding: 4.5px 6px;
             border-bottom: 1px solid var(--border-color);
-            font-size: 11px;
+            font-size: 10.5px;
         }
 
         tr:nth-child(even) {
@@ -198,7 +209,7 @@
         }
 
         .footnote {
-            font-size: 9.5px;
+            font-size: 9px;
             color: #718096;
             margin-top: 4px;
         }
@@ -223,14 +234,14 @@
 <body>
 
 <div class="container">
+    <!-- TOP HEADER & SUMMARY -->
     <div class="header">
         <h1>SYNQUAD GROUP</h1>
         <p>A Strategic Consortium of Agrani Projects LLP, Kushya Projects &amp; Procurement LLP, Dharmendra Rajput &amp; Satyam Construction.</p>
     </div>
 
-    <div class="section-title" style="margin-top: 0;">Company Overview</div>
     <div class="overview-box">
-        We are an infrastructure development firm specializing in turnkey government contracts for water distribution networks, sewage treatment facilities, and civil works across Madhya Pradesh. Managed by a core team of experienced partners and engineering leaders, we combine technical execution with tender compliance and supply chain expertise.
+        <strong>Company Overview:</strong> We are an infrastructure development firm specializing in turnkey government contracts for water distribution networks, sewage treatment facilities, and civil works across Madhya Pradesh. Managed by a core team of experienced partners and engineering leaders, we combine technical execution with tender compliance and supply chain expertise.
     </div>
 
     <div class="metrics-grid">
@@ -248,95 +259,99 @@
         </div>
     </div>
 
-    <div class="two-col-section">
+    <!-- TWO-PART MAIN BODY -->
+    <div class="split-layout">
+        <!-- LEFT PART: CAPABILITIES, TRACK RECORD & FINANCIALS -->
         <div>
-            <div class="section-title" style="margin-top: 4px;">Core Capabilities &amp; Services</div>
+            <div class="section-title first">Core Capabilities &amp; Services</div>
             <ul class="styled-list">
                 <li><strong>Water Supply Schemes (JJM &amp; AMRUT 2.0):</strong> Execution of rural and urban water supply networks, including intake wells, sumps, overhead storage tanks (OHTs up to 800 KL capacity), and extensive HDPE/CI/DI pipeline laying.</li>
                 <li><strong>Sewage &amp; Wastewater Treatment (SBM 2.0):</strong> Turnkey design, civil construction, pumping stations, drainage networks, and long-term O&amp;M for STPs (0.5 MLD to 3.0 MLD) under SBM and UADD initiatives.</li>
                 <li><strong>Civil &amp; Commercial Infrastructure:</strong> Development of residential layouts, rigid pavement roads, commercial buildings, and government office facilities.</li>
             </ul>
-        </div>
-        <div>
-            <div class="section-title" style="margin-top: 4px;">Key Equipment &amp; Plant Infrastructure</div>
+
+            <div class="section-title">Key Track Record &amp; Achievements</div>
             <ul class="styled-list">
-                <li><strong>Earthmoving Equipment:</strong> Backhoe Loaders, Tractors, and heavy-duty Road Breakers for trenching and rock breaking.</li>
-                <li><strong>Concrete Infrastructure:</strong> Self-loading Ready-Mix Concrete (RMC) for structural pours.</li>
-                <li><strong>Formwork &amp; Shuttering:</strong> 200+ sets of specialized shuttering suited for both round and square sump construction and storage reservoirs.</li>
+                <li><strong>250+ Village Water Schemes:</strong> Delivered tap water supply systems across remote and complex terrains in Madhya Pradesh under the Jal Jeevan Mission.</li>
+                <li><strong>Urban &amp; STP Infrastructure:</strong> Constructing 3.0 MLD STP facilities in Shamgarh (Mandsaur), plus multi-capacity STPs with O&amp;M contracts for UADD.</li>
+                <li><strong>Government Clients:</strong> Public Health Engineering Department (PHED), Directorate of Urban Administration &amp; Development (UADD), Department of Forest MP.</li>
             </ul>
+
+            <div class="section-title">Financial Track Record (Combined Performance)</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>FY</th>
+                        <th class="text-right">Kushya Projects (cr)</th>
+                        <th class="text-right">Dharmendra Rajput (cr)</th>
+                        <th class="text-right">Satyam Const. (cr)</th>
+                        <th class="text-right">Total (cr)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>FY 2022-23</strong></td>
+                        <td class="text-right">1.05</td>
+                        <td class="text-right">11.64</td>
+                        <td class="text-right">5.97</td>
+                        <td class="text-right"><strong>18.66</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>FY 2023-24</strong></td>
+                        <td class="text-right">7.21</td>
+                        <td class="text-right">11.58</td>
+                        <td class="text-right">10.89</td>
+                        <td class="text-right"><strong>29.68</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>FY 2024-25</strong></td>
+                        <td class="text-right">4.14</td>
+                        <td class="text-right">7.04</td>
+                        <td class="text-right">7.19</td>
+                        <td class="text-right"><strong>18.37</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>FY 2025-26</strong></td>
+                        <td class="text-right">2.42</td>
+                        <td class="text-right">12.28</td>
+                        <td class="text-right">7.63</td>
+                        <td class="text-right"><strong>22.33</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="footnote">*Turnover figures are as per latest GSTR.</div>
+        </div>
+
+        <!-- RIGHT PART: EQUIPMENT & LEADERSHIP SIDEBAR -->
+        <div class="sidebar-box">
+            <div class="section-title first">Equipment &amp; Plant</div>
+            <ul class="styled-list">
+                <li><strong>Earthmoving:</strong> Backhoe Loaders, Tractors, and heavy-duty Road Breakers for trenching and rock breaking.</li>
+                <li><strong>Concrete Infra:</strong> Self-loading Ready-Mix Concrete (RMC) for structural pours.</li>
+                <li><strong>Shuttering:</strong> 200+ sets of specialized shuttering for round/square sumps and storage reservoirs.</li>
+            </ul>
+
+            <div class="section-title">Leadership &amp; Key Profiles</div>
+            <div class="profile-stack">
+                <div class="profile-card">
+                    <div class="profile-name">Dharmendra Rajput</div>
+                    <div>Civil engineer with 10+ years of expertise in project execution, end-to-end site management, and client-government liaising for civil and water treatment infrastructure.</div>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-name">Amit Wagh</div>
+                    <div>Finance graduate with 19+ years of expertise in financial, project, and vendor management, specializing in data management and liaising with surveyors, design consultants, and PDMC.</div>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-name">Bhupendra Singh</div>
+                    <div>19+ years of expertise in global corporate law, business development, and regulatory compliance, alongside hands-on management in site operations and procurement.</div>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-name">Rajeev Bhayre</div>
+                    <div>Seasoned contractor with 30+ years of experience managing and executing government contracts, specializing in labour management.</div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="section-title">Leadership &amp; Key Profiles</div>
-    <div class="profile-grid">
-        <div class="profile-card">
-            <div class="profile-name">Dharmendra Rajput</div>
-            <div>A civil engineer by profession with 10+ years of expertise in project execution, end-to-end site management, and client-government liaising for civil and water treatment infrastructure.</div>
-        </div>
-        <div class="profile-card">
-            <div class="profile-name">Amit Wagh</div>
-            <div>Finance graduate by profession with 19+ years of expertise in financial, project, and vendor management, specializing in data management and seamless liaising with surveyors, design drawing consultants, and Project Development and Management Consultants (PDMC).</div>
-        </div>
-        <div class="profile-card">
-            <div class="profile-name">Bhupendra Singh</div>
-            <div>Professional with 19+ years of expertise in global corporate law, business development, and regulatory compliance, alongside proven hands-on management in site operations and procurement.</div>
-        </div>
-        <div class="profile-card">
-            <div class="profile-name">Rajeev Bhayre</div>
-            <div>A seasoned contractor with 30+ years of experience in managing and executing government contracts, specializing in labour management.</div>
-        </div>
-    </div>
-
-    <div class="section-title">Key Track Record &amp; Achievements</div>
-    <ul class="styled-list">
-        <li><strong>250+ Village Water Schemes:</strong> Delivered tap water supply systems across remote and complex terrains in Madhya Pradesh under the Jal Jeevan Mission.</li>
-        <li><strong>Urban &amp; STP Infrastructure:</strong> Constructing 3.0 MLD STP facilities in Shamgarh (Mandsaur), plus multi-capacity STPs with O&amp;M contracts for UADD.</li>
-        <li><strong>Government Clients:</strong> Public Health Engineering Department (PHED), Directorate of Urban Administration &amp; Development (UADD), Department of Forest MP.</li>
-    </ul>
-
-    <div class="section-title">Financial Track Record (Combined Performance)</div>
-    <table>
-        <thead>
-            <tr>
-                <th>FY</th>
-                <th class="text-right">Kushya Projects LLP (in cr)</th>
-                <th class="text-right">Dharmendra Rajput (in cr)</th>
-                <th class="text-right">Satyam Construction (in cr)</th>
-                <th class="text-right">Total Turnover (in cr)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>FY 2022-23</strong></td>
-                <td class="text-right">1.05</td>
-                <td class="text-right">11.64</td>
-                <td class="text-right">5.97</td>
-                <td class="text-right"><strong>18.66</strong></td>
-            </tr>
-            <tr>
-                <td><strong>FY 2023-24</strong></td>
-                <td class="text-right">7.21</td>
-                <td class="text-right">11.58</td>
-                <td class="text-right">10.89</td>
-                <td class="text-right"><strong>29.68</strong></td>
-            </tr>
-            <tr>
-                <td><strong>FY 2024-25</strong></td>
-                <td class="text-right">4.14</td>
-                <td class="text-right">7.04</td>
-                <td class="text-right">7.19</td>
-                <td class="text-right"><strong>18.37</strong></td>
-            </tr>
-            <tr>
-                <td><strong>FY 2025-26</strong></td>
-                <td class="text-right">2.42</td>
-                <td class="text-right">12.28</td>
-                <td class="text-right">7.63</td>
-                <td class="text-right"><strong>22.33</strong></td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="footnote">*Turnover figures are as per latest GSTR.</div>
 </div>
 
 </body>
