@@ -15,7 +15,7 @@
 
         @page {
             size: A4;
-            margin: 12mm 14mm;
+            margin: 8mm 10mm;
         }
 
         body {
@@ -23,92 +23,102 @@
             color: var(--text-dark);
             background-color: #f0f4f8;
             margin: 0;
-            padding: 20px;
-            line-height: 1.55;
+            padding: 15px;
+            line-height: 1.4;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
             background: #ffffff;
-            padding: 36px;
+            padding: 25px 30px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
         /* Header */
         .header {
-            border-bottom: 3px solid var(--primary);
-            padding-bottom: 16px;
-            margin-bottom: 22px;
+            border-bottom: 2.5px solid var(--primary);
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
         }
 
         .header h1 {
             color: var(--primary);
             margin: 0;
-            font-size: 28px;
+            font-size: 24px;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .header p {
-            margin: 5px 0 0 0;
+            margin: 3px 0 0 0;
             color: var(--secondary);
-            font-size: 13.5px;
+            font-size: 12px;
             font-weight: 600;
-            line-height: 1.4;
+            width: 100%;
         }
 
         /* Sections */
         .section-title {
             color: var(--primary);
-            font-size: 16.5px;
+            font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
-            border-left: 4px solid var(--secondary);
-            padding-left: 10px;
-            margin-top: 24px;
-            margin-bottom: 12px;
-            break-after: avoid;
-            page-break-after: avoid;
+            letter-spacing: 0.6px;
+            border-left: 3.5px solid var(--secondary);
+            padding-left: 8px;
+            margin-top: 12px;
+            margin-bottom: 6px;
         }
 
         .overview-box {
             background-color: var(--bg-light);
-            padding: 16px 18px;
-            border-radius: 6px;
+            padding: 9px 12px;
+            border-radius: 5px;
             border: 1px solid var(--border-color);
-            font-size: 14px;
+            font-size: 11.5px;
+            line-height: 1.4;
         }
 
         /* Key Metrics / Highlights */
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            margin: 18px 0;
+            gap: 10px;
+            margin: 10px 0;
         }
 
         .metric-card {
             background: var(--primary);
             color: white;
-            padding: 16px 12px;
-            border-radius: 6px;
+            padding: 8px 10px;
+            border-radius: 5px;
             text-align: center;
         }
 
         .metric-card .number {
-            font-size: 28px;
+            font-size: 20px;
             font-weight: bold;
             color: var(--accent);
-            line-height: 1.15;
+            line-height: 1.1;
         }
 
         .metric-card .label {
-            font-size: 13px;
-            margin-top: 5px;
-            line-height: 1.25;
+            font-size: 10.5px;
+            margin-top: 2px;
+        }
+
+        /* Two-Column Middle Section */
+        .two-col-section {
+            display: grid;
+            grid-template-columns: 1.35fr 1fr;
+            gap: 16px;
+            margin-top: 4px;
         }
 
         /* Lists */
@@ -120,61 +130,63 @@
 
         ul.styled-list li {
             position: relative;
-            padding-left: 18px;
-            margin-bottom: 10px;
-            font-size: 14px;
+            padding-left: 14px;
+            margin-bottom: 5px;
+            font-size: 11.2px;
+            line-height: 1.35;
         }
 
         ul.styled-list li::before {
             content: "■";
             color: var(--secondary);
-            font-size: 9px;
+            font-size: 8px;
             position: absolute;
             left: 0;
-            top: 3px;
+            top: 2px;
         }
 
         /* Leadership Cards */
         .profile-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
+            gap: 8px;
         }
 
         .profile-card {
             border: 1px solid var(--border-color);
-            padding: 14px;
-            border-radius: 6px;
+            padding: 8px 10px;
+            border-radius: 5px;
             background: #fff;
-            font-size: 13.5px;
+            font-size: 10.8px;
+            line-height: 1.35;
         }
 
         .profile-name {
             font-weight: bold;
             color: var(--primary);
-            font-size: 15px;
-            margin-bottom: 6px;
+            font-size: 12px;
+            margin-bottom: 2px;
         }
 
         /* Financial Table */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
+            margin-top: 6px;
         }
 
         th {
             background-color: var(--primary);
             color: white;
             text-align: left;
-            padding: 10px 12px;
-            font-size: 13.5px;
+            padding: 5px 8px;
+            font-size: 11px;
         }
 
         td {
-            padding: 9px 12px;
+            padding: 4.5px 8px;
             border-bottom: 1px solid var(--border-color);
-            font-size: 13.5px;
+            font-size: 11px;
         }
 
         tr:nth-child(even) {
@@ -186,19 +198,18 @@
         }
 
         .footnote {
-            font-size: 11.5px;
+            font-size: 9.5px;
             color: #718096;
-            margin-top: 6px;
+            margin-top: 4px;
         }
 
-        /* Print Balancing Rules */
         @media print {
             body {
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 background-color: #ffffff !important;
                 padding: 0 !important;
-                line-height: 1.45;
+                margin: 0 !important;
             }
             .container {
                 box-shadow: none !important;
@@ -206,65 +217,18 @@
                 padding: 0 !important;
                 border-radius: 0;
             }
-            .header {
-                padding-bottom: 12px;
-                margin-bottom: 16px;
-            }
-            .section-title {
-                margin-top: 18px;
-                margin-bottom: 9px;
-                font-size: 15px;
-            }
-            .overview-box {
-                padding: 12px 15px;
-                font-size: 13px;
-            }
-            .metrics-grid {
-                margin: 14px 0;
-            }
-            .metric-card {
-                padding: 12px 10px;
-            }
-            .metric-card .number {
-                font-size: 24px;
-            }
-            .metric-card .label {
-                font-size: 12px;
-            }
-            ul.styled-list li {
-                margin-bottom: 7px;
-                font-size: 13px;
-            }
-            .profile-card {
-                padding: 11px 13px;
-                font-size: 12.5px;
-            }
-            th, td {
-                padding: 8px 10px;
-                font-size: 12.5px;
-            }
-            .page-break {
-                break-before: page;
-                page-break-before: always;
-                margin-top: 0 !important;
-            }
-            .overview-box, .metrics-grid, .profile-grid, .profile-card, table {
-                break-inside: avoid;
-                page-break-inside: avoid;
-            }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- PAGE 1 -->
     <div class="header">
         <h1>SYNQUAD GROUP</h1>
         <p>A Strategic Consortium of Agrani Projects LLP, Kushya Projects &amp; Procurement LLP, Dharmendra Rajput &amp; Satyam Construction.</p>
     </div>
 
-    <div class="section-title">Company Overview</div>
+    <div class="section-title" style="margin-top: 0;">Company Overview</div>
     <div class="overview-box">
         We are an infrastructure development firm specializing in turnkey government contracts for water distribution networks, sewage treatment facilities, and civil works across Madhya Pradesh. Managed by a core team of experienced partners and engineering leaders, we combine technical execution with tender compliance and supply chain expertise.
     </div>
@@ -284,22 +248,26 @@
         </div>
     </div>
 
-    <div class="section-title">Core Capabilities &amp; Services</div>
-    <ul class="styled-list">
-        <li><strong>Water Supply Schemes (JJM &amp; AMRUT 2.0):</strong> Execution of rural and urban water supply networks, including intake wells, sumps, overhead storage tanks (OHTs up to 800 KL capacity), and extensive HDPE/CI/DI pipeline laying.</li>
-        <li><strong>Sewage &amp; Wastewater Treatment (SBM 2.0):</strong> Turnkey design, civil construction, pumping stations, drainage networks, and long-term O&amp;M for STPs (0.5 MLD to 3.0 MLD) under SBM and UADD initiatives.</li>
-        <li><strong>Civil &amp; Commercial Infrastructure:</strong> Development of residential layouts, rigid pavement roads, commercial buildings, and government office facilities.</li>
-    </ul>
+    <div class="two-col-section">
+        <div>
+            <div class="section-title" style="margin-top: 4px;">Core Capabilities &amp; Services</div>
+            <ul class="styled-list">
+                <li><strong>Water Supply Schemes (JJM &amp; AMRUT 2.0):</strong> Execution of rural and urban water supply networks, including intake wells, sumps, overhead storage tanks (OHTs up to 800 KL capacity), and extensive HDPE/CI/DI pipeline laying.</li>
+                <li><strong>Sewage &amp; Wastewater Treatment (SBM 2.0):</strong> Turnkey design, civil construction, pumping stations, drainage networks, and long-term O&amp;M for STPs (0.5 MLD to 3.0 MLD) under SBM and UADD initiatives.</li>
+                <li><strong>Civil &amp; Commercial Infrastructure:</strong> Development of residential layouts, rigid pavement roads, commercial buildings, and government office facilities.</li>
+            </ul>
+        </div>
+        <div>
+            <div class="section-title" style="margin-top: 4px;">Key Equipment &amp; Plant Infrastructure</div>
+            <ul class="styled-list">
+                <li><strong>Earthmoving Equipment:</strong> Backhoe Loaders, Tractors, and heavy-duty Road Breakers for trenching and rock breaking.</li>
+                <li><strong>Concrete Infrastructure:</strong> Self-loading Ready-Mix Concrete (RMC) for structural pours.</li>
+                <li><strong>Formwork &amp; Shuttering:</strong> 200+ sets of specialized shuttering suited for both round and square sump construction and storage reservoirs.</li>
+            </ul>
+        </div>
+    </div>
 
-    <div class="section-title">Key Equipment &amp; Plant Infrastructure</div>
-    <ul class="styled-list">
-        <li><strong>Earthmoving Equipment:</strong> Backhoe Loaders, Tractors, and heavy-duty Road Breakers for trenching and rock breaking.</li>
-        <li><strong>Concrete Infrastructure:</strong> Self-loading Ready-Mix Concrete (RMC) for structural pours.</li>
-        <li><strong>Formwork &amp; Shuttering:</strong> 200+ sets of specialized shuttering suited for both round and square sump construction and storage reservoirs.</li>
-    </ul>
-
-    <!-- PAGE 2 -->
-    <div class="section-title page-break">Leadership &amp; Key Profiles</div>
+    <div class="section-title">Leadership &amp; Key Profiles</div>
     <div class="profile-grid">
         <div class="profile-card">
             <div class="profile-name">Dharmendra Rajput</div>
